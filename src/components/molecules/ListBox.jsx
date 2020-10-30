@@ -1,18 +1,23 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 const ListBox = ({
   comments,
   title,
   user,
   number,
-  created_at
+  created_at,
+  body,
+  id
 }) => (
   <List>
     <div>
       <h3>
-        <span>{`###${number} `}</span>
-        <span>{title}</span>
+        <Link to={`/detail/${id}`} body={body}>
+          <span>{`###${number} `}</span>
+          <span>{title}</span>
+        </Link>
       </h3>
       <p>
         <span>{`작성자: ${user} `}</span>

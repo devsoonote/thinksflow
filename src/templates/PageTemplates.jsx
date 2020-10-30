@@ -6,25 +6,29 @@ import {
   Route
 } from 'react-router-dom'
 import ListPage from '../pages/ListPage'
+import DetailPage from '../pages/DetailPage'
 
-const PageTemplates = () => {
-  return (
-    <Wrapper>
-      <Router>
-        <Content>
-          <Header>
-            <Title>Angular / Angular-cli</Title>
-          </Header>
-          <Switch>
-            <Route path="/">
-              <ListPage />
-            </Route>
-          </Switch>
-        </Content>
-      </Router>
-    </Wrapper>
-  )
-}
+const PageTemplates = () => (
+  <Wrapper>
+    <Router>
+      <Content>
+        <Header>
+          <Title>Angular / Angular-cli</Title>
+        </Header>
+
+        <Switch>
+          <Route path="/" exact>
+            <ListPage />
+          </Route>
+          <Route path="/detail/:id">
+            <DetailPage />
+          </Route>
+        </Switch>
+
+      </Content>
+    </Router>
+  </Wrapper>
+)
 
 const Wrapper = styled.div`
   display: flex;

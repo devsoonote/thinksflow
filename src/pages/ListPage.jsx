@@ -25,7 +25,7 @@ const ListPage = () => {
               id,
               title,
               user,
-              url,
+              body,
               number,
               created_at
             } = item
@@ -34,16 +34,16 @@ const ListPage = () => {
               <ListBox
                 comments={comments}
                 key={id}
+                id={id}
                 title={title}
                 user={user.login}
-                url={url}
+                body={body}
                 number={number}
                 created_at={created_at}
               />
             )
           })
         ) : <span>리스트가 없습니다</span>}
-        <ListBox />
       </ListContainer>
     </Section>
   )
