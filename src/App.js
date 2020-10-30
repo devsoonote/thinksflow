@@ -1,10 +1,17 @@
 import React from 'react'
+import { Provider } from 'react-redux'
+import { Normalize } from 'styled-normalize'
+import store from './store'
+import PageTemplates from './templates/PageTemplates'
 
 function App() {
   return (
-    <div className="App">
-      <h1>122</h1>
-    </div>
+    <Provider store={store}>
+      <div className="App">
+        <Normalize />
+        <PageTemplates />
+      </div>
+    </Provider>
   )
 }
 
