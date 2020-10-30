@@ -14,7 +14,11 @@ const ListBox = ({
   <List>
     <div>
       <h3>
-        <Link to={`/detail/${id}`} body={body}>
+        <Link to={{
+          pathname: `/detail/${id}`,
+          bodyProps: body
+        }}
+        >
           <span>{`###${number} `}</span>
           <span>{title}</span>
         </Link>
